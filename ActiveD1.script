@@ -33,7 +33,7 @@ str                         outString;
 
 int                         motorValue       =  80;
 int                         frontSensorValue =  60;
-int                         sideSensorValue  =  85;
+int                         sideSensorValue  =  50;
 
 
     syscall(motorleftset, "0");  syscall(motorrightset, "0");
@@ -62,12 +62,12 @@ int                         sideSensorValue  =  85;
         else if (frontSensorValue > rightFront ) {
             syscall(motorset, itos(-motorValue) + ":" + itos(motorValue));
         }
-//        else if (sideSensorValue > leftSide) {
-//            syscall(motorset, itos(motorValue) + ":" + itos(1));
-//        }
-//        else if (sideSensorValue > rightSide ) {
-//            syscall(motorset, itos(1) + ":" + itos(motorValue));
-//        }
+        else if (sideSensorValue > leftSide) {
+            syscall(motorset, itos(motorValue) + ":" + itos(1));
+        }
+        else if (sideSensorValue > rightSide ) {
+            syscall(motorset, itos(1) + ":" + itos(motorValue));
+        }
         else {
             syscall(motorleftset, itos(motorValue));  syscall(motorrightset, itos(motorValue));
         }
