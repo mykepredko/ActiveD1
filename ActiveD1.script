@@ -73,7 +73,7 @@ int                         rearSensorValue  =  30;
             else {
                 syscall(motorset, itos(motorValue) + ":" + itos(-(motorValue / 2)));
             }
-            syscall(delay, syscall(random, ""));
+            syscall(delay, itos(100));
         }
         else if (frontSensorValue > leftFront) {
             syscall(motorset, itos(motorValue) + ":" + itos(-motorValue));
