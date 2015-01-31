@@ -61,10 +61,19 @@ int                         rearSensorValue  =  30;
 //            syscall(motorset, itos(motorValue) + ":" + itos(motorValue));
 //            syscall(delay, "100");
 //        }
-        if (frontSensorValue > leftFront) {
+        if ((frontSensorValue > leftFront) && (frontSensorValue > rightFront)) {
+            if (50 < syscall(random, "")) {
+                syscall(motorset, itos(motorValue) + ":" + itos(-motorValue));
+            }
+            else {
+                syscall(motorset, itos(-motorValue) + ":" + itos(motorValue));
+            }
+            syscall(delay, syscall(randome, ""));
+        }
+        else if (frontSensorValue > leftFront) {
             syscall(motorset, itos(motorValue) + ":" + itos(-motorValue));
         }
-        else if (frontSensorValue > rightFront ) {
+        else if (frontSensorValue > rightFront) {
             syscall(motorset, itos(-motorValue) + ":" + itos(motorValue));
         }
 //        else if (sideSensorValue > leftSide) {
@@ -76,7 +85,7 @@ int                         rearSensorValue  =  30;
         else {
             syscall(motorleftset, itos(motorValue));  syscall(motorrightset, itos(motorValue));
         }
-        syscall(delay, "350");
+        syscall(delay, "250");
     }
 
     syscall(motorleftset, "0");  syscall(motorrightset, "0");
