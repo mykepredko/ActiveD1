@@ -1,0 +1,26 @@
+## Copyright (c) 2014 Mimetics Inc.
+## All Rights Reserved
+##
+## THIS SOFTWARE IS PROVIDED BY MIMETICS "AS IS" WITHOUT ANY EXPRESSED OR 
+## IMPLIED WARRANTIES.  IN NO CASE SHALL MIMETICS OR ANY CONTRIBUTORS BE
+## LIABLE IN ANY DAMAGES CAUSED BY THE USE OF THIS SOFTWARE.  
+##
+## FileName: ActiveD1.panel
+## Version : 01.0
+##
+## Author  : Myke Predko
+##
+## Description:
+##   - Panel to provide indications on what Object Sensors are Receiving
+##
+## Release History:
+##  objAv07 - Corrected leftFront/leftSide reversal
+
+dimensions = 102, 53;
+background = movBACKG.bmp;
+
+slider     = leftSide,              0,    1, 34,  10, 28,   show,  west;
+slider     = leftFront,             0,   29,  5,  10, 28,   show, north;
+slider     = rightFront,            0,   62,  5,  10, 28,   show, north;
+slider     = rightSide,             0,   73, 34,  10, 28,   show,  east;
+slider     = rearMiddle,            0,   45, 23,  10, 28,   show, south;

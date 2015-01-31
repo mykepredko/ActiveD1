@@ -1,0 +1,69 @@
+// Copyright (c) 2014 Mimetics Inc.
+// All Rights Reserved
+//
+// THIS SOFTWARE IS PROVIDED BY MIMETICS "AS IS" WITHOUT ANY EXPRESSED OR 
+// IMPLIED WARRANTIES.  IN NO CASE SHALL MIMETICS OR ANY CONTRIBUTORS BE
+// LIABLE IN ANY DAMAGES CAUSED BY THE USE OF THIS SOFTWARE.  
+//
+// FileName: ActiveD1.script
+// Version : 01.0
+//
+// Author  : myke predko
+//
+// Description: Updated Object Object Avoidance Program Created for
+//              Active Surplus
+//
+// Release History:
+//  objAv05 - Output the Values using sliders
+//          - Poll button and return
+//          - Updated for 0-100
+//          - Updated for _Header1
+//          - Further Updated for _Header1
+//  objAv06 - Updated to work with icon bmp that does not start with "_"
+//  objAv07 - Corrected Left Front/Side Reversal
+//  
+meta("icon",                "objAv06.b");
+meta("description",         "Object Avoid:Simple Programming Example");
+int                         leftFront;
+int                         rightFront;
+int                         leftSide;
+int                         rightSide;
+int                         rearMiddle;
+str                         outString;
+
+
+    syscall(motorleftset, "0");  syscall(motorrightset, "0");
+
+    syscall(loadpanelfile, "_exec2.p");
+    syscall(setpanelicon, "tools:objAv06.b");
+    syscall(loadsubpanelfile, "objAv07.p");
+    syscall(setpaneltext, "pgmname:Object Avoid");
+    syscall(runpanelfile, "");
+
+    syscall(cleardisplay, "");
+    for (; "RUN:" == syscall(tostring, "4:" + syscall(getactivepanelstatus, ""));) {
+        leftFront = stoi(syscall(irleftfront, ""));
+        syscall(setpanelvalue, "leftFront:" + itos(leftFront));
+        rightFront = stoi(syscall(irrightfront, ""));
+        syscall(setpanelvalue, "rightFront:" + itos(rightFront));
+        leftSide = stoi(syscall(irleftside, ""));
+        syscall(setpanelvalue, "leftSide:" + itos(leftSide));
+        rightSide = stoi(syscall(irrightside, ""));
+        syscall(setpanelvalue, "rightSide:" + itos(rightSide));
+        rearMiddle = stoi(syscall(ircenterrear, ""));
+        syscall(setpanelvalue, "rearMiddle:" + itos(rearMiddle));
+        if (30 > leftFront) {
+            syscall(motorleftset, "100");  syscall(motorrightset, "-100");
+            syscall(delay, "500");
+        }
+        else if (30 > rightFront ) {
+            syscall(motorleftset, "-100");  syscall(motorrightset, "100");
+            syscall(delay, "500");
+        }
+        else {
+            syscall(motorleftset, "100");  syscall(motorrightset, "100");
+            syscall(delay, "100");
+        }
+    }
+
+    syscall(motorleftset, "0");  syscall(motorrightset, "0");
