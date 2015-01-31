@@ -33,7 +33,7 @@ str                         outString;
 
 int                         motorValue       =  80;
 int                         frontSensorValue =  70;
-int                         sideSensorValue  =  70;
+int                         sideSensorValue  =  40;
 int                         rearSensorValue  =  30;
 
 
