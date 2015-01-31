@@ -61,6 +61,10 @@ int                         rearSensorValue     =  30;
         rearMiddle = stoi(syscall(ircenterrear, ""));
         syscall(setpanelvalue, "rearMiddle:" + itos(rearMiddle));
         if ((twoFrontSensorValue > leftFront) && (twoFrontSensorValue > rightFront)) {
+            if (rearSensorValue < rearMiddle) {
+                syscall(motorset, itos(-motorValue) + ":" + itos(-motorValue));
+                syscall(delay, itos(300));
+            }
             if (1 == lastTurn) {
                 syscall(motorset, itos(-(motorValue / 2)) + ":" + itos(motorValue));
             }
@@ -68,10 +72,6 @@ int                         rearSensorValue     =  30;
                 syscall(motorset, itos(-(motorValue / 2)) + ":" + itos(motorValue));
             }
             else {
-                if (rearSensorValue < rearMiddle) {
-                    syscall(motorset, itos(-motorValue) + ":" + itos(-motorValue));
-                    syscall(delay, itos(300));
-                }
 //            if (50 < syscall(random, "")) {
                 if (leftFront < rightFront) {
                     lastTurn = 1;
