@@ -66,19 +66,23 @@ int                         rearSensorValue     =  30;
                 syscall(delay, itos(300));
             }
             if (1 == lastTurn) {
+//                syscall(motorset, itos(-(motorValue / 2)) + ":" + itos(motorValue));
                 syscall(motorset, itos(-(motorValue / 2)) + ":" + itos(motorValue));
             }
             else if (2 == lastTurn) {
-                syscall(motorset, itos(-(motorValue / 2)) + ":" + itos(motorValue));
+//                syscall(motorset, itos(-(motorValue / 2)) + ":" + itos(motorValue));
+                syscall(motorset, itos(motorValue) + ":" + itos(-(motorValue / 2)));
             }
             else {
 //            if (50 < syscall(random, "")) {
                 if (leftFront < rightFront) {
                     lastTurn = 1;
+//                    syscall(motorset, itos(-(motorValue / 2)) + ":" + itos(motorValue));
                     syscall(motorset, itos(-(motorValue / 2)) + ":" + itos(motorValue));
                 }
                 else {
                     lastTurn = 2;
+//                    syscall(motorset, itos(motorValue) + ":" + itos(-(motorValue / 2)));
                     syscall(motorset, itos(motorValue) + ":" + itos(-(motorValue / 2)));
                 }
             }
