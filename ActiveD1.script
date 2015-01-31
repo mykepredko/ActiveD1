@@ -57,10 +57,10 @@ int                         rearSensorValue  =  30;
         syscall(setpanelvalue, "rightSide:" + itos(rightSide));
         rearMiddle = stoi(syscall(ircenterrear, ""));
         syscall(setpanelvalue, "rearMiddle:" + itos(rearMiddle));
-        if (rearSensorValue > rearMiddle) {
-            syscall(motorset, itos(motorValue) + ":" + itos(motorValue));
-            syscall(delay, "100");
-        }
+//        if (rearSensorValue > rearMiddle) {
+//            syscall(motorset, itos(motorValue) + ":" + itos(motorValue));
+//            syscall(delay, "100");
+//        }
         if (frontSensorValue > leftFront) {
             syscall(motorset, itos(motorValue) + ":" + itos(-motorValue));
         }
