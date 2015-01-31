@@ -22,7 +22,7 @@
 //  objAv06 - Updated to work with icon bmp that does not start with "_"
 //  objAv07 - Corrected Left Front/Side Reversal
 //  
-meta("icon",                "objAv06.b");
+meta("icon",                "ActiveD1.b");
 meta("description",         "Object Avoid:Simple Programming Example");
 int                         leftFront;
 int                         rightFront;
@@ -35,7 +35,7 @@ str                         outString;
     syscall(motorleftset, "0");  syscall(motorrightset, "0");
 
     syscall(loadpanelfile, "_exec2.p");
-    syscall(setpanelicon, "tools:objAv06.b");
+    syscall(setpanelicon, "tools:ActiveD1.b");
     syscall(loadsubpanelfile, "objAv07.p");
     syscall(setpaneltext, "pgmname:Object Avoid");
     syscall(runpanelfile, "");
