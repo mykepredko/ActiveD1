@@ -23,7 +23,7 @@
 //  objAv07 - Corrected Left Front/Side Reversal
 //  
 meta("icon",                "ActiveD1.b");
-meta("description",         "Active Surplus:Simple Object Avoidance");
+meta("description",         "Object Avoid:Simple Programming Example");
 int                         leftFront;
 int                         rightFront;
 int                         leftSide;
