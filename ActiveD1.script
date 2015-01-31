@@ -33,7 +33,7 @@ str                         outString;
 
 int                         motorValue       =  80;
 int                         frontSensorValue =  70;
-int                         sideSensorValue  =  70;
+int                         sideSensorValue  =  85;
 
 
     syscall(motorleftset, "0");  syscall(motorrightset, "0");
