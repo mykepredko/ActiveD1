@@ -76,7 +76,6 @@ int                         rearSensorValue     =  30;
                 if (leftFront < rightFront) {
                     lastTurn = 1;
                     syscall(motorset, itos(-(motorValue / 2)) + ":" + itos(motorValue));
-                    last
                 }
                 else {
                     lastTurn = 2;
