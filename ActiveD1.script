@@ -65,7 +65,7 @@ int                         sideSensorValue  =  70;
             syscall(delay, "250");
         }
         else if (sideSensorValue > leftSide) {
-            syscall(motorleftset, itos(motorValue) + ":" + itos(1);
+            syscall(motorleftset, itos(motorValue) + ":" + itos(1));
             syscall(delay, "250");
         }
         else if (sideSensorValue > rightSide ) {
