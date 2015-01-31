@@ -58,24 +58,20 @@ int                         sideSensorValue  =  85;
         syscall(setpanelvalue, "rearMiddle:" + itos(rearMiddle));
         if (frontSensorValue > leftFront) {
             syscall(motorset, itos(motorValue) + ":" + itos(-motorValue));
-            syscall(delay, "250");
         }
         else if (frontSensorValue > rightFront ) {
             syscall(motorset, itos(-motorValue) + ":" + itos(motorValue));
-            syscall(delay, "250");
         }
 //        else if (sideSensorValue > leftSide) {
 //            syscall(motorset, itos(motorValue) + ":" + itos(1));
-//            syscall(delay, "250");
 //        }
 //        else if (sideSensorValue > rightSide ) {
 //            syscall(motorset, itos(1) + ":" + itos(motorValue));
-//            syscall(delay, "250");
 //        }
         else {
             syscall(motorleftset, itos(motorValue));  syscall(motorrightset, itos(motorValue));
-            syscall(delay, "250");
         }
+        syscall(delay, "350");
     }
 
     syscall(motorleftset, "0");  syscall(motorrightset, "0");
