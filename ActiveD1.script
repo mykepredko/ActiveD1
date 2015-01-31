@@ -32,8 +32,8 @@ int                         rearMiddle;
 str                         outString;
 
 int                         motorValue       =  80;
-int                         frontSensorValue =  70;
-int                         sideSensorValue  =  60;
+int                         frontSensorValue =  80;
+int                         sideSensorValue  =  70;
 int                         rearSensorValue  =  30;
 
 
