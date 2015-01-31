@@ -71,7 +71,7 @@ int                         rearSensorValue  =  30;
                 syscall(motorset, itos(-(motorValue / 2)) + ":" + itos(motorValue));
             }
             else {
-                syscall(motorset, itos(motorValue) + ":" + itos(-(motorValue ? 2)));
+                syscall(motorset, itos(motorValue) + ":" + itos(-(motorValue / 2)));
             }
             syscall(delay, syscall(random, ""));
         }
